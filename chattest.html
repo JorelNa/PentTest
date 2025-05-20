@@ -1,0 +1,37 @@
+<html><body>
+  <script type='text/javascript'>
+
+	function initEmbeddedMessaging() {
+
+		try {
+
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+ 
+			embeddedservice_bootstrap.init(
+
+				'00Dbh000001nCVh',
+
+				'Uganda_CCC_Chat',
+
+				'https://standardbankgroupltd--chnwugdev.sandbox.my.site.com/ESWUgandaCCCChat1747738445670',
+
+				{
+
+					scrt2URL: 'https://standardbankgroupltd--chnwugdev.sandbox.my.salesforce-scrt.com'
+
+				}
+
+			);
+
+		} catch (err) {
+
+			console.error('Error loading Embedded Messaging: ', err);
+
+		}
+
+	};
+</script>
+<script type='text/javascript' src='https://standardbankgroupltd--chnwugdev.sandbox.my.site.com/ESWUgandaCCCChat1747738445670/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+ 
+</body></html>
