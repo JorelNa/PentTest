@@ -1,37 +1,42 @@
-<html><body>
-  <script type='text/javascript'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Embedded Messaging Test</title>
+</head>
+<body>
+  <h1>Salesforce Embedded Messaging Test</h1>
+  <p>If everything is configured correctly, the chat should load below.</p>
 
-	function initEmbeddedMessaging() {
+  <!-- Container for the embedded messaging (if needed) -->
+  <div id="embedded-messaging-container"></div>
 
-		try {
+  <!-- Embedded Messaging Script -->
+  <script type="text/javascript">
+    function initEmbeddedMessaging() {
+      try {
+        embeddedservice_bootstrap.settings.language = 'en_US'; // Set language
 
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
- 
-			embeddedservice_bootstrap.init(
+        embeddedservice_bootstrap.init(
+          '00Dbh000001nCVh',
+          'Uganda_CCC_Chat',
+          'https://standardbankgroupltd--chnwugdev.sandbox.my.site.com/ESWUgandaCCCChat1747738445670',
+          {
+            scrt2URL: 'https://standardbankgroupltd--chnwugdev.sandbox.my.salesforce-scrt.com'
+          }
+        );
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+      }
+    };
+  </script>
 
-				'00Dbh000001nCVh',
-
-				'Uganda_CCC_Chat',
-
-				'https://standardbankgroupltd--chnwugdev.sandbox.my.site.com/ESWUgandaCCCChat1747738445670',
-
-				{
-
-					scrt2URL: 'https://standardbankgroupltd--chnwugdev.sandbox.my.salesforce-scrt.com'
-
-				}
-
-			);
-
-		} catch (err) {
-
-			console.error('Error loading Embedded Messaging: ', err);
-
-		}
-
-	};
-</script>
-<script type='text/javascript' src='https://standardbankgroupltd--chnwugdev.sandbox.my.site.com/ESWUgandaCCCChat1747738445670/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
- 
-</body></html>
+  <!-- Load the Bootstrap for Embedded Messaging -->
+  <script 
+    type="text/javascript" 
+    src="https://standardbankgroupltd--chnwugdev.sandbox.my.site.com/ESWUgandaCCCChat1747738445670/assets/js/bootstrap.min.js" 
+    onload="initEmbeddedMessaging()">
+  </script>
+</body>
+</html>
